@@ -106,3 +106,8 @@ Report [here]("https://github.com/teddy4445/ga_physics/issues"). Guaranteed repl
 * Liron Simon - [email](mailto:lirons.gb@gmail.com) | [LinkedInֿ](https://www.linkedin.com/in/liron-simon/)
 * Teddy Lazebnik - [email](mailto:t.lazebnik@ucl.ac.uk) | [LinkedInֿ](https://www.linkedin.com/in/teddy-lazebnik/)
 * Alex Liberzon - [email](mailto:alexlib@tauex.tau.ac.il) | [LinkedInֿ](https://www.linkedin.com/in/alexliberzon/)
+
+
+## Run online using Mybinder.org
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/LironSimon/SciMED/master)
