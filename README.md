@@ -52,7 +52,7 @@ EMPSR is constructed from four components:
 Each section allows the user to easily insert physical knowledge or assumptions, specific to its current task, directing the search process for a more credible result 
 with fewer required resources. The motivation for this structure is derived from the way human scientists work, where more promising directions get more attention and resources. 
 
-![Algo_structure](https://user-images.githubusercontent.com/72650415/188271269-2c8d6686-1f91-43ab-b432-00db7cf57824.png)
+![Algo_structure](https://user-images.githubusercontent.com/72650415/189652380-9a3104d8-dd12-4629-9814-7ae6774babdb.png)
 
 <a name="data_preparation"/>
 
@@ -67,7 +67,8 @@ The solution file will be saved in the directory called "results" under the name
 Please cite the EMPSR work if you compare, use, or build on it:
 ```
 @article{lazebnik2022,
-  title={EMPSR: A Computational Framework For Physical Symbolic Regression with Human-In-The-Loop},
+  title={SciMED: A Computational Framework For Physics-Informed
+Symbolic Regression with Scientist-In-The-Loop},
   author={Simon, L. and Liberzon, A. and Lazebnik, T.},
   journal={TBD},
   year={2023}
