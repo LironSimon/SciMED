@@ -28,22 +28,22 @@ performance on these tasks than the state-of-the-art SR software package.
 ## Code usage
 ### Run the experiments shown in the paper:
 1. Clone the repo 
-2. Install the 'requirements.txt' file.
-3. run the project from the main.py file, make sure all the arguments are set to **True**. 
+2. Install the `requirements.txt` file.
+3. run the project from the `main.py` file, make sure all the arguments are set to **True**. 
 
 ### Use in your project:
 1. Clone the repo 
-2. Install the 'requirements.txt' file.
+2. Install the `requirements.txt` file.
 3. Include the following code to the relevant part of your project:
 ```
-from empsr import empsr
-empsr.run(dataset_x: pandas.DataFrame, dataset_y: pandas.Seires, ...)
+from scimed import scimed
+scimed.run(dataset_x: pandas.DataFrame, dataset_y: pandas.Seires, ...)
 ```
 
 <a name="the_algorithm"/>
 
 ## The algorithm
-EMPSR is constructed from four components: 
+SciMED is constructed from four components: 
 1. **A genetic algorithm-based feature selection:** Reduce the search space by selecting a single, most explainable, feature from each group of features that are considered to be the same in physical essence. This devition to groups is provided by the user, applying his domain knowledge.
 2. **A genetic algorithm-based automatic machine learning (AutoML):** Trains an ML to produce synthetic data that facilitates the SR task by enriching the data domain.
 3. **A genetic algorithm-based symbolic regression (SR):** less resource and time-consuming but stochastic SR search. May result in sub-optimal outcome.
