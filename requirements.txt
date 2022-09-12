@@ -6,6 +6,6 @@ scikit-learn
 scipy
 TPOT
 gplearn
-pytorch
+torch
 termcolor
 sympy
