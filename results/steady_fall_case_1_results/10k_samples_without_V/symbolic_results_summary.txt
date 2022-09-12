@@ -1,0 +1,7 @@
+Symbolic run count: 20
+
+The function that repeated in 100.0% of the runs: 
+  div(rhop, rhop)
+
+1 best equations found (according to r2 score):
+ 1) div(rhop, rhop)

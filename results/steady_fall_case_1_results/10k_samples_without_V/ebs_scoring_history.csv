@@ -1,0 +1,2 @@
+,wanted_loss,mae,mse,r2,t_test_p_value,found_eq
+0,232326.8139,416.8647854,231982.7436,-41355.0311,0,"sub(mul(1.000, div(rhoa, mul(rhop, d))), 0.000)"

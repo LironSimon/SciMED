@@ -1,0 +1,7 @@
+Symbolic run count: 20
+
+The function that repeated in 100.0% of the runs: 
+  div(sub(1Num_31, sub(Fr_11, 2Num_23)), Re)
+
+1 best equations found (according to r2 score):
+ 1) div(sub(1Num_31, sub(Fr_11, 2Num_23)), Re)

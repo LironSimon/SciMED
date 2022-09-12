@@ -1,0 +1,2 @@
+,wanted_loss,mae,mse,r2,t_test_p_value,found_eq
+0,7.67E-12,1.40E-13,1.32E-25,1,1,"sub(mul(13.133, mul(g*d/V**2, delta_rho/rhoa)), 0.033)"
