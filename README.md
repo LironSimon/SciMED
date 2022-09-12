@@ -111,3 +111,6 @@ Report [here]("https://github.com/teddy4445/ga_physics/issues"). Guaranteed repl
 ## Run online using Mybinder.org
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/LironSimon/SciMED/master)
+
+Open New Terminal and run `python main.py`
+
