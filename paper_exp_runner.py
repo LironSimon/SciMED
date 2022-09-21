@@ -9,7 +9,7 @@ from experiments.exp_constant_acceleration import ExpConstantAcceleration
 from experiments.exp_steady_free_fall_with_drag_case_2_with_educated_guess import ExpSFF2WithGuess
 
 
-class Main:
+class PaperExpRunner:
     """
     Single entry point for the project.
     This file runs all the experiments in the project and save the raw results
@@ -45,7 +45,7 @@ class Main:
         Run the experiments, if requested
         """
         # prepare IO
-        os.makedirs(os.path.join(os.path.dirname(__file__), Main.RESULTS_FOLDER_NAME),
+        os.makedirs(os.path.join(os.path.dirname(__file__), PaperExpRunner.RESULTS_FOLDER_NAME),
                     exist_ok=True)
         # run all the experiments
         if const_acc_numerical_bool or const_acc_analytical_bool or const_acc_force_ebs_bool:
@@ -75,22 +75,22 @@ class Main:
 
 
 if __name__ == '__main__':
-    Main.run(const_acc_numerical_bool=False,
-             const_acc_analytical_bool=False,
-             const_acc_force_ebs_bool=False,
+    PaperExpRunner.run(const_acc_numerical_bool=False,
+                       const_acc_analytical_bool=False,
+                       const_acc_force_ebs_bool=False,
 
-             sff1_numerical_bool=False,
-             sff1_analytical_bool=False,
-             sff1_force_ebs_bool=False,
+                       sff1_numerical_bool=False,
+                       sff1_analytical_bool=False,
+                       sff1_force_ebs_bool=False,
 
-             sff2_numerical_bool=False,
-             sff2_analytical_bool=False,
-             sff2_force_ebs_bool=False,
+                       sff2_numerical_bool=False,
+                       sff2_analytical_bool=False,
+                       sff2_force_ebs_bool=False,
 
-             sff2_with_guess_numerical_bool=False,
-             sff2_with_guess_analytical_bool=False,
-             sff2_with_guess_force_ebs_bool=False,
+                       sff2_with_guess_numerical_bool=False,
+                       sff2_with_guess_analytical_bool=False,
+                       sff2_with_guess_force_ebs_bool=False,
 
-             sff3_numerical_bool=False,
-             sff3_analytical_bool=True,
-             sff3_force_ebs_bool=False)
+                       sff3_numerical_bool=False,
+                       sff3_analytical_bool=True,
+                       sff3_force_ebs_bool=False)

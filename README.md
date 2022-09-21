@@ -29,7 +29,7 @@ performance on these tasks than the state-of-the-art SR software package.
 ### Run the experiments shown in the paper:
 1. Clone the repo 
 2. Install the `requirements.txt` file.
-3. run the project from the `main.py` file, make sure all the arguments are set to **True**. 
+3. run the project from the `paper_exp_runner.py` file, make sure all the arguments are set to **True**. 
 
 ### Use in your project:
 1. Clone the repo 
