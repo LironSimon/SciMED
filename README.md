@@ -114,3 +114,9 @@ Report [here]("https://github.com/teddy4445/ga_physics/issues"). Guaranteed repl
 
 Open New Terminal and run `python main.py`
 
+
+## Run using Docker
+
+  docker run alexlib/scimed:latest
+ 
+
