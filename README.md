@@ -117,6 +117,6 @@ Open New Terminal and run `python main.py`
 
 ## Run using Docker
 
-  docker run alexlib/scimed:latest
+    docker run alexlib/scimed:latest
  
 
