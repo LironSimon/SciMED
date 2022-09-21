@@ -32,6 +32,7 @@ class scimed:
             analytical_bool: bool,
             force_ebs_bool: bool,
             results_folder: str,
+            analytical_reachment_portion: float,
             numerical_run_times: int,
             numerical_generations: int,
             numerical_population: int,
@@ -116,6 +117,8 @@ class scimed:
                               features_file)
                 # 2.2.4) reduce the dataset of non-normalized samples for next part
                 train_data_x = train_data_x.iloc[:, best_gene.feature_indexes+[-1]]
+            # 2.3 add more data to the original data with the model
+            # TODO: add to the next release after fixing the sample method in production
 
         # 3) continue to the symbolic regression
         if analytical_bool:

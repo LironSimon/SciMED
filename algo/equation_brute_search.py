@@ -4,9 +4,9 @@ import json
 import pandas as pd
 from scipy import stats
 import concurrent.futures
-from sklearn.metrics import r2_score
 from sklearn.model_selection import KFold
 from sklearn.linear_model import LinearRegression
+from sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error
 
 # project imports
 from algo.ebs.eq import Eq
@@ -185,6 +185,7 @@ class EBS:
         answer = {}
         best_eq = ""
         best_score = 9999
+        # TODO: replace the organized search with random monto-carlo sample later in production once the mapping order is fixed
         # run over the tree topologies sizes
         for n in size_range:
             if verbose == 1:
