@@ -39,6 +39,8 @@ performance on these tasks than the state-of-the-art SR software package.
 from scimed import scimed
 scimed.run(dataset_x: pandas.DataFrame, dataset_y: pandas.Seires, ...)
 ```
+### Demo:
+A demo on how to use SciMED with a data from a CSV file (using Pandas) is shown in the "/demo" folder. 
 
 <a name="the_algorithm"/>
 
