@@ -1,7 +1,0 @@
-Symbolic run count: 20
-
-The function that repeated in 100.0% of the runs: 
-  div(add(rhop, sub(V, mul(add(0.371, d), rhop))), mul(add(0.371, d), rhop))
-
-1 best equations found (according to r2 score):
- 1) div(add(rhop, sub(V, mul(add(0.371, d), rhop))), mul(add(0.371, d), rhop))

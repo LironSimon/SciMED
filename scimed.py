@@ -6,6 +6,7 @@ from sklearn.model_selection import train_test_split
 # project imports
 from utills.consts import *
 from utills.fitness_methods import *
+from utills.logger_config import Logger
 from algo.equation_brute_search import EBS
 from utills.result_tracker import ResultTracker
 from algo.multi_tpot_analysis import MultiTPOTrunner
@@ -24,9 +25,9 @@ class scimed:
 
     @staticmethod
     def run(train_data_x: pd.DataFrame,
-            train_data_y: pd.Seires,
+            train_data_y: pd.DataFrame,
             test_data_x: pd.DataFrame,
-            test_data_y: pd.Seires,
+            test_data_y: pd.DataFrame,
             results_folder: str,
             analytical_reachment_portion: float = 0,
             numerical_run_times: int = 20,
@@ -52,6 +53,9 @@ class scimed:
 
         # 1) prepare IO
         os.makedirs(results_folder, exist_ok=True)
+
+        # init logger
+        Logger(save_path=os.path.join(results_folder, "logger.txt"))
 
         # 2) run the numerical part
         if numerical_bool:

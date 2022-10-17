@@ -19,7 +19,6 @@ class Logger:
                             format='%(asctime)s %(message)s',
                             filemode='w')
 
-
     @staticmethod
     def print(message: str):
         Logger.logger.info(message)

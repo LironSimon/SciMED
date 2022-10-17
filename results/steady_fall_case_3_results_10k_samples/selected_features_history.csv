@@ -1,3 +1,0 @@
-feature_indices,feature_names
-"[4, 9, 17, 21, 28, 29, 30, 31, 32]","['1Num_23', '2Num_13', 'AccFr_21', 'Fr_11', 'Re', 'delta_rho/rhoa', 'g*d/V**2', 'nu*g/V**3', 'rhop/rhoa']"
-"[2, 11, 17, 27, 28, 29, 30, 31, 32]","['1Num_13', '2Num_23', 'AccFr_21', 'Fr_32', 'Re', 'delta_rho/rhoa', 'g*d/V**2', 'nu*g/V**3', 'rhop/rhoa']"
