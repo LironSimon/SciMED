@@ -66,7 +66,7 @@ The solution file will be saved in the directory called "results" under the name
 <a name="how_to_cite"/>
 
 ## How to cite
-Please cite the EMPSR work if you compare, use, or build on it:
+Please cite the SciMED work if you compare, use, or build on it:
 ```
 @article{lazebnik2022,
   title={SciMED: A Computational Framework For Physics-Informed
