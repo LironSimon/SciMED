@@ -100,7 +100,7 @@ We would love you to contribute to this project, pull requests are very welcome!
 <a name="bug_reports"/>
 
 ## Bug Reports
-Report [here]("https://github.com/teddy4445/ga_physics/issues"). Guaranteed reply as fast as we can :)
+Report [here]("https://github.com/LironSimon/SciMED/issues"). Guaranteed reply as fast as we can :)
 
 <a name="contact"/>
 
