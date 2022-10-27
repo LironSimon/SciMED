@@ -3,6 +3,7 @@
 """
 import os
 import pandas as pd
+from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import train_test_split
 """
 2. Import SciMED's instance
@@ -15,7 +16,8 @@ from scimed import scimed
 
 def run():
     df = pd.read_csv("412_dataset.csv")
-    Y_COL_NAME = "recovery_time*N_Verso"
+    Y_COL_NAME = "tau/t_expected"
+    df = (df-df.min())/(df.max()-df.min())
     x = df.drop([Y_COL_NAME], axis=1)
     y = df[Y_COL_NAME]
     x_train, x_test, y_train, y_test = train_test_split(x,
