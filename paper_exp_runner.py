@@ -39,7 +39,10 @@ class PaperExpRunner:
             sff2_with_guess_force_ebs_bool: bool = True,
             sff3_numerical_bool: bool = True,
             sff3_analytical_bool: bool = True,
-            sff3_force_ebs_bool: bool = True):
+            sff3_force_ebs_bool: bool = True,
+            drag_force_numerical_bool: bool = True,
+            drag_force_analytical_bool: bool = True,
+            drag_force_force_ebs_bool: bool = True):
         """
         Single method to use in the class.
         Run the experiments, if requested
@@ -72,6 +75,11 @@ class PaperExpRunner:
             ExpSFF3.perform(numerical_bool=sff3_numerical_bool,
                             analytical_bool=sff3_analytical_bool,
                             force_ebs_bool=sff3_force_ebs_bool)
+        
+        if drag_force_numerical_bool or drag_force_analytical_bool or drag_force_force_ebs_bool:
+            ExpSFF3.perform(numerical_bool=drag_force_numerical_bool,
+                            analytical_bool=drag_force_analytical_bool,
+                            force_ebs_bool=drag_force_force_ebs_bool)
 
 
 if __name__ == '__main__':
@@ -92,5 +100,9 @@ if __name__ == '__main__':
                        sff2_with_guess_force_ebs_bool=False,
 
                        sff3_numerical_bool=False,
-                       sff3_analytical_bool=True,
-                       sff3_force_ebs_bool=False)
+                       sff3_analytical_bool=False,
+                       sff3_force_ebs_bool=False,
+                      
+                       drag_force_numerical_bool=True,
+                       drag_force_analytical_bool=True,
+                       drag_force_force_ebs_bool=True)
