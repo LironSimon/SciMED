@@ -5,7 +5,7 @@ import pandas as pd
 # library imports
 
 
-class DragForce:
+class DragForceDataGenerator:
     """
     This class is responsible for the generation of measurements of aerodynamic 
     drag force Fd, exerted on a sphere.
