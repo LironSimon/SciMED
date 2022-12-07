@@ -93,4 +93,24 @@ SFF_3_RESULTS_FOLDER_NAME = os.path.join(RESULTS_FOLDER,
 SFF_3_DATA_FOLDER_NAME = os.path.join(DATA_FOLDER,
                                       "case_3_steady_fall_with_drag_data_{}_samples.csv".format(SFF_N_SAMPLES_STR))
 
+
+# 3) Drag force exp:
+# - data generation:
+DRAG_FORCE_NUM_SAMPLES = 10000
+DRAG_FORCE_TEST_SIZE_PORTION = 0.75
+# - experiment run:
+DRAG_FORCE_NUMERICAL_RUN_TIMES = 20
+DRAG_FORCE_NUMERICAL_GENERATION_COUNT = 5
+DRAG_FORCE_NUMERICAL_POP_SIZE = 30
+DRAG_FORCE_ANALYTICAL_RUN_TIMES = 20
+DRAG_FORCE_ANALYTICAL_GENERATION_COUNT = 5
+DRAG_FORCE_ANALYTICAL_POP_SIZE = 50
+DRAG_FORCE_NOISE_RANGE = (0, 0.02)
+DRAG_FORCE_ANALYTICAL_PARSIMONY_COEFFICIENT = 0.02
+DRAG_FORCE_EBS_SIZE_RANGE = (5,)
+# - result path
+DRAG_FORCE_RESULTS_FOLDER_NAME = os.path.join(RESULTS_FOLDER,
+                                              "drag_force_results",
+                                              "{}_samples".format(DRAG_FORCE_NUM_SAMPLES))
+
 # end - consts #
