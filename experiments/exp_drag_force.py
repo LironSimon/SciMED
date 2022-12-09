@@ -56,6 +56,8 @@ class ExpDragFroce:
                                                                  d_range=(0.01, 0.1),
                                                                  noise_range= DRAG_FORCE_NOISE_RANGE,
                                                                  save_path=data_path)
+        # feature_indexes_ranges = [[i,i] for i in range(len(df.keys())-1)] #remove comment if you don't want feature selection
+        
         # 1.1) load data, normalize and split
         df = pd.read_csv(data_path)
         Logger.print('Generated data:\n{}'.format(df.describe()))
