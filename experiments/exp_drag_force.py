@@ -49,13 +49,13 @@ class ExpDragFroce:
         # 1) generate data
         data_path = os.path.join(os.path.dirname(__file__), "..", "data",
                                  "drag_force_{}_samples.csv".format(DRAG_FORCE_NUM_SAMPLES))
-        DragForceDataGenerator.generate(samples=DRAG_FORCE_NUM_SAMPLES,
-                                        cd_range=(1, 10),
-                                        rho_range=(30, 50),
-                                        v_range=(1, 10),
-                                        d_range=(0.01, 0.1),
-                                        noise_range= DRAG_FORCE_NOISE_RANGE,
-                                        save_path=data_path)
+        feature_indexes_ranges = DragForceDataGenerator.generate(samples=DRAG_FORCE_NUM_SAMPLES,
+                                                                 cd_range=(1, 10),
+                                                                 rho_range=(30, 50),
+                                                                 v_range=(1, 10),
+                                                                 d_range=(0.01, 0.1),
+                                                                 noise_range= DRAG_FORCE_NOISE_RANGE,
+                                                                 save_path=data_path)
         # 1.1) load data, normalize and split
         df = pd.read_csv(data_path)
         Logger.print('Generated data:\n{}'.format(df.describe()))
@@ -70,33 +70,48 @@ class ExpDragFroce:
         data_end_time = time.time()
         Logger.print("   --- Finished. Elapsed time: {} ---".format(timedelta(seconds=data_end_time - start_time)))
 
-        # 2.1) continue to the MultiTPOTrunner regression
+        # 2) continue to the MultiTPOTrunner regression
         Logger.print('Training MultiTPOTrunner:')
         if numerical_bool:
-            # 2.1) find the best ML model for data
-            all_t_scores, best_t_model = MultiTPOTrunner.run_and_analyze(run_times=DRAG_FORCE_NUMERICAL_RUN_TIMES,
-                                                                         train_data_x=train_data_x,
-                                                                         train_data_y=train_data_y,
-                                                                         test_data_x=test_data_x,
-                                                                         test_data_y=test_data_y,
-                                                                         generations=DRAG_FORCE_NUMERICAL_GENERATION_COUNT,
-                                                                         population_size=DRAG_FORCE_NUMERICAL_POP_SIZE,
-                                                                         k_fold=K_FOLD,
-                                                                         performance_metric=neg_mean_squared_error_scorer,
-                                                                         save_dir=os.path.join(os.path.dirname(os.path.dirname(__file__)),
-                                                                                               DRAG_FORCE_RESULTS_FOLDER_NAME),
-                                                                         n_jobs=-1)
-            # 2.2) save results of best model from all runs
+            # 2.1.1) find the best sub-set of features and ML model
+            best_gene = GAFS.run(tpot_run_times=DRAG_FORCE_NUMERICAL_RUN_TIMES,
+                                feature_generations=DRAG_FORCE_FEATURE_GENERATIONS_COUNT,
+                                tpot_regressor_generations=DRAG_FORCE_NUMERICAL_GENERATION_COUNT,
+                                feature_population_size=DRAG_FORCE_FEATURE_POP_SIZE,
+                                tpot_regressor_population_size=DRAG_FORCE_NUMERICAL_POP_SIZE,
+                                mutation_rate=DRAG_FORCE_MUTATION_RATE,
+                                feature_indexes_ranges=feature_indexes_ranges,
+                                mutation_w=[val[1]-val[0] for val in feature_indexes_ranges],
+                                royalty=DRAG_FORCE_ROYALTY,
+                                k_fold=k_fold,
+                                performance_metric=neg_mean_squared_error_scorer,
+                                train_data_x=train_data_x,
+                                train_data_y=train_data_y,
+                                test_data_x=test_data_x,
+                                test_data_y=test_data_y,
+                                save_dir=os.path.join(os.path.dirname(os.path.dirname(__file__)),
+                                                      DRAG_FORCE_RESULTS_FOLDER_NAME),
+                                cores=-1)
+            # 2.1.2) save results of best model from all runs
             ResultTracker.run(program_part="tpot",
                               run_times=DRAG_FORCE_NUMERICAL_RUN_TIMES,
-                              all_scores=all_t_scores,
-                              model=best_t_model,
-                              train_data_x=train_data_x,
+                              all_scores=best_gene.scoring_history,
+                              model=best_gene.model_object,
+                              train_data_x=train_data_x.iloc[:, best_gene.feature_indexes],
                               train_data_y=train_data_y,
-                              test_data_x=test_data_x,
+                              test_data_x=test_data_x.iloc[:, best_gene.feature_indexes],
                               test_data_y=test_data_y,
                               save_dir=os.path.join(os.path.dirname(os.path.dirname(__file__)),
-                                                    DRAG_FORCE_RESULTS_FOLDER_NAME))
+                                                      DRAG_FORCE_RESULTS_FOLDER_NAME))
+            # 2.1.3) save selected features of best gene
+            with open(os.path.join(os.path.dirname(__file__), DRAG_FORCE_RESULTS_FOLDER_NAME, "best_features_selected.json"),
+                      "w") as features_file:
+                json.dump({"index": best_gene.feature_indexes,
+                            "names": list(test_data_x.columns[best_gene.feature_indexes])},
+                          features_file)
+            Logger.print("Best gene features: {}".format(list(test_data_x.columns[best_gene.feature_indexes])))
+            # 2.1.4) reduce the dataset of non-normalized samples for next part
+            df = df.iloc[:, best_gene.feature_indexes+[-1]]
         # 2.2) log elapsed time
         tpot_end_time = time.time()
         Logger.print("   --- Finished. Elapsed time: {} ---".format(timedelta(seconds=tpot_end_time - data_end_time)))
