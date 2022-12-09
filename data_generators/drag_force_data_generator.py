@@ -85,6 +85,6 @@ class DragForceDataGenerator:
         pd.DataFrame(data=data, columns=["Cd","rhoa","rhop","v","d","L","p1","p2",
                                          "p3","p4","p5","p6","Fd"]).to_csv(save_path, index=False)
         #return indices of feature groups: rhoa-rhop and d-l form a group. The rest do not have a selection option
-        return [[0,0],[1,2],[3,3],[4,5],[6,6],[7,7],[8,8],[9,9],[10,10],[11,11],[12,12]] 
+        return [[0,0],[1,2],[2,2],[3,4],[5,5],[6,6],[7,7],[8,8],[9,9],[10,10],[11,11]] 
 
     # Logic - end #
