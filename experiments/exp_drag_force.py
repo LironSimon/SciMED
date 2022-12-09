@@ -51,7 +51,7 @@ class ExpDragFroce:
                                  "drag_force_{}_samples.csv".format(DRAG_FORCE_NUM_SAMPLES))
         feature_indexes_ranges = DragForceDataGenerator.generate(samples=DRAG_FORCE_NUM_SAMPLES,
                                                                  cd_range=(1, 10),
-                                                                 rho_range=(30, 50),
+                                                                 rhoa_range=(30, 50),
                                                                  v_range=(1, 10),
                                                                  d_range=(0.01, 0.1),
                                                                  noise_range= DRAG_FORCE_NOISE_RANGE,
