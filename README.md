@@ -68,12 +68,15 @@ The solution file will be saved in the directory called "results" under the name
 ## How to cite
 Please cite the SciMED work if you compare, use, or build on it:
 ```
-@article{lazebnik2022,
-  title={SciMED: A Computational Framework For Physics-Informed
-Symbolic Regression with Scientist-In-The-Loop},
-  author={Simon, L. and Liberzon, A. and Lazebnik, T.},
-  journal={TBD},
-  year={2023}
+@article{keren2023computational,
+        title={A computational framework for physics-informed symbolic regression with straightforward integration of domain knowledge},
+        author={Keren, Liron Simon and Liberzon, Alex and Lazebnik, Teddy},
+        journal={Scientific Reports},
+        volume={13},
+        number={1},
+        pages={1249},
+        year={2023},
+        publisher={Nature Publishing Group UK London}
 }
 ```
 
