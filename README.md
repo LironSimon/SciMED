@@ -54,7 +54,7 @@ SciMED is constructed from four components:
 Each section allows the user to easily insert physical knowledge or assumptions, specific to its current task, directing the search process for a more credible result 
 with fewer required resources. The motivation for this structure is derived from the way human scientists work, where more promising directions get more attention and resources. 
 
-![Algo_structure](https://user-images.githubusercontent.com/72650415/189652380-9a3104d8-dd12-4629-9814-7ae6774babdb.png)
+![Algo_structure](https://user-images.githubusercontent.com/72650415/230033829-9e283c9c-80ab-43d1-9385-6999074ae836.png)
 
 <a name="data_preparation"/>
 
