@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from distutils.core import setup
+from setuptools import setup, find_packages
 
 setup(name='SciMED',
       version='1.0',
@@ -8,6 +8,5 @@ setup(name='SciMED',
       author='Liron Simon Keren, Alex Liberzon, Teddy Lazebnik',
       author_email='lazebnik.teddy@gmail.com',
       url='https://github.com/LironSimon/SciMED',
-      packages=['distutils', 'distutils.command'],
+      packages=find_packages(),
      )
-
